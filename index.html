@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Bhatia – Cricket Analyst</title>
+<title>Rahul Bhatia – VIP Gold</title>
 
 <!-- META PIXEL (SAFE – NO VALUE / NO CURRENCY) -->
 <script>
@@ -23,154 +23,107 @@ fbq('track','PageView');
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
-
-/* CLEAN STATIC BACKGROUND */
 body{
 min-height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
-url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d'); /* CRICKET STADIUM */
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#ffffff;
+linear-gradient(rgba(10,10,10,.78),rgba(10,10,10,.9)),
+url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d');
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;color:#fff;
 }
-
-/* CARD */
 .card{
-max-width:420px;
-width:100%;
-background:rgba(0,0,0,.90);
-border-radius:22px;
-padding:22px;
-text-align:center;
-box-shadow:0 0 28px rgba(0,0,0,.45);
+max-width:420px;width:100%;
+background:linear-gradient(180deg,rgba(20,20,20,.95),rgba(5,5,5,.98));
+border-radius:22px;padding:22px;text-align:center;
+box-shadow:0 0 45px rgba(212,175,55,.45);
+border:1px solid rgba(212,175,55,.35);
 }
-
-/* TOP IMAGE (NORMAL – NO HORROR) */
-.gif{
-width:100%;
-border-radius:16px;
-margin-bottom:14px;
+.crown{
+font-size:28px;margin-bottom:6px;
 }
-
-/* TEXT */
-h1{
-color:#e6d8a8;
-font-size:24px;
-font-weight:600;
-}
-.subs{
-color:#dddddd;
-font-size:14px;
-margin:6px 0;
-}
-
-/* TAG */
+h1{color:#d4af37;font-size:24px;letter-spacing:.5px}
+.subs{color:#ffd700;font-size:14px;margin:6px 0}
 .tag{
 display:inline-block;
-background:#f1c40f;
-color:#000;
-padding:6px 18px;
-border-radius:40px;
-font-size:13px;
-font-weight:600;
-margin:14px 0;
+background:linear-gradient(90deg,#d4af37,#ffdf6c);
+color:#000;padding:6px 18px;border-radius:40px;
+font-size:13px;font-weight:700;margin:14px 0
 }
-
-/* LIST */
-.list{
-text-align:left;
-font-size:14px;
-line-height:1.8;
-margin-bottom:16px;
+.list{text-align:left;font-size:14px;line-height:1.8;margin-bottom:14px}
+.list span{color:#ffdf6c;font-weight:600}
+.countdown{font-size:18px;margin:10px 0;color:#ffd700;font-weight:800}
+.progress{
+width:100%;height:10px;background:#1f1f1f;border-radius:10px;overflow:hidden;margin:12px 0
 }
-.list span{
-color:#a8ffd8;
-font-weight:600;
+.bar{
+height:100%;width:0%;
+background:linear-gradient(90deg,#d4af37,#ffdf6c)
 }
-
-/* COUNTDOWN */
-.countdown{
-font-size:18px;
-margin:16px 0;
-color:#a8ffd8;
-font-weight:700;
+.verify{
+display:none;margin:10px 0;font-size:15px;color:#ffdf6c;font-weight:700
 }
-
-/* BUTTON */
 .join{
-display:block;
-width:100%;
-padding:15px;
-background:#a8ffd8;
-color:#000;
-font-size:18px;
-font-weight:700;
-border-radius:50px;
-text-decoration:none;
+display:block;width:100%;padding:15px;
+background:linear-gradient(90deg,#d4af37,#ffdf6c);
+color:#000;font-size:18px;font-weight:800;
+border-radius:50px;text-decoration:none;
+box-shadow:0 6px 18px rgba(212,175,55,.45);
+animation:pulse 1.2s infinite
 }
-
-/* NOTE */
-.note{
-font-size:12px;
-opacity:.85;
-margin-top:10px;
-}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+.note{font-size:12px;opacity:.85;margin-top:10px;color:#f1e7b6}
 </style>
 </head>
 
 <body>
-
 <div class="card">
 
-<img class="gif" src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Cricket">
-
+<div class="crown">👑</div>
 <h1>RAHUL BHATIA</h1>
 <div class="subs">🔥 20,013+ Subscribers • Since 2015</div>
-
-<div class="tag">Best Cricket Match Analyst</div>
+<div class="tag">VIP GOLD • Best Cricket Analyst</div>
 
 <div class="list">
 🏏 <span>IPL Toss & Match Pass</span><br>
 🏆 <span>WPL Accurate Signals</span><br>
 🔥 <span>BBL Session Specialist</span><br>
 🌍 <span>T20 World Cup Analysis</span><br>
-✅ <span>Safe • Trusted • Professional</span>
+✅ <span>Safe • Trusted • Premium</span>
 </div>
 
 <div class="countdown">
-Telegram auto join in <span id="sec">45</span> seconds
+Auto join in <span id="sec">45</span> seconds
 </div>
 
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="verify" id="verify">🔒 Verifying VIP Access…</div>
+
 <a href="https://t.me/+9q95C8HPAb9kNjA1" class="join" onclick="manualJoin()">
-🚀 JOIN TELEGRAM NOW
+🚀 JOIN VIP TELEGRAM
 </a>
 
 <div class="note">
-Cricket Stadium Background • Clean UI • No Horror
+VIP Gold Theme • Clean UI • High Accuracy
 </div>
 
 </div>
 
 <script>
-let s = 45;
-let timer = setInterval(()=>{
-  s--;
-  document.getElementById("sec").innerText = s;
-  if(s === 0){
+let total=45,s=total;
+const bar=document.getElementById("bar");
+const sec=document.getElementById("sec");
+const verify=document.getElementById("verify");
+let timer=setInterval(()=>{
+  s--; sec.innerText=s;
+  bar.style.width=((total-s)/total)*100+"%";
+  if(s===5) verify.style.display="block";
+  if(s===0){
     clearInterval(timer);
-    fbq('trackCustom','TelegramAutoJoin45Clean');
-    window.location.href = "https://t.me/+9q95C8HPAb9kNjA1";
+    fbq('trackCustom','TelegramAutoJoin45Gold');
+    window.location.href="https://t.me/+9q95C8HPAb9kNjA1";
   }
 },1000);
-
-function manualJoin(){
-  fbq('trackCustom','TelegramManualJoin');
-}
+function manualJoin(){ fbq('trackCustom','TelegramManualJoin'); }
 </script>
 
 </body>
