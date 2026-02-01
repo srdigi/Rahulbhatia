@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Bhatia – VIP</title>
+<title>Rahul Bhatia – Cricket Analyst</title>
 
 <!-- META PIXEL (SAFE – NO VALUE / NO CURRENCY) -->
 <script>
@@ -23,42 +23,74 @@ fbq('track','PageView');
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
+
+/* PAGE BASE */
 body{
 min-height:100vh;
-background:
-linear-gradient(rgba(20,20,20,.65),rgba(20,20,20,.85)),
-url('https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf'); /* CRICKET STADIUM */
-background-size:cover;
-background-position:center;
+position:relative;
+overflow:hidden;
 display:flex;
 align-items:center;
 justify-content:center;
 color:#f2f2f2;
 }
 
+/* CRICKET STADIUM BACKGROUND (AUTO) */
+body::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d');
+background-size:cover;
+background-position:center;
+filter:blur(6px);
+transform:scale(1.12);
+z-index:-2;
+animation:zoomBg 28s ease-in-out infinite;
+}
+
+/* VIGNETTE */
+body::after{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,.7) 100%);
+z-index:-1;
+}
+
+@keyframes zoomBg{
+0%{transform:scale(1.12)}
+50%{transform:scale(1.18)}
+100%{transform:scale(1.12)}
+}
+
+/* GLASS CARD */
 .card{
 max-width:420px;
 width:100%;
-background:rgba(28,28,28,.95);
+background:rgba(255,255,255,0.08);
 border-radius:22px;
 padding:22px;
 text-align:center;
-box-shadow:0 0 25px rgba(200,180,120,.25);
-border:1px solid rgba(200,180,120,.25);
+backdrop-filter: blur(14px) saturate(140%);
+-webkit-backdrop-filter: blur(14px) saturate(140%);
+border:1px solid rgba(255,255,255,0.25);
+box-shadow:0 20px 45px rgba(0,0,0,0.45);
 }
 
+/* TEXT */
 h1{
-color:#e6d8a8;
+color:#f3e8c6;
 font-size:24px;
 font-weight:600;
 }
-
 .subs{
-color:#cfcfcf;
+color:#e6e6e6;
 font-size:14px;
 margin:6px 0;
 }
-
 .tag{
 display:inline-block;
 background:linear-gradient(90deg,#e8d9b5,#f3ead1);
@@ -75,14 +107,14 @@ text-align:left;
 font-size:14px;
 line-height:1.8;
 margin-bottom:14px;
-color:#dcdcdc;
+color:#eeeeee;
 }
-
 .list span{
 color:#f0e6c8;
 font-weight:500;
 }
 
+/* COUNTDOWN */
 .countdown{
 font-size:17px;
 margin:10px 0;
@@ -90,6 +122,7 @@ color:#f0e6c8;
 font-weight:600;
 }
 
+/* PROGRESS BAR */
 .progress{
 width:100%;
 height:9px;
@@ -98,13 +131,13 @@ border-radius:10px;
 overflow:hidden;
 margin:12px 0;
 }
-
 .bar{
 height:100%;
 width:0%;
 background:linear-gradient(90deg,#e6d8a8,#f3ead1);
 }
 
+/* VERIFY TEXT */
 .verify{
 display:none;
 margin:10px 0;
@@ -113,6 +146,7 @@ color:#e6d8a8;
 font-weight:500;
 }
 
+/* BUTTON */
 .join{
 display:block;
 width:100%;
@@ -126,6 +160,7 @@ text-decoration:none;
 box-shadow:0 4px 12px rgba(200,180,120,.35);
 }
 
+/* FOOTER NOTE */
 .note{
 font-size:12px;
 opacity:.75;
@@ -147,42 +182,56 @@ margin-top:10px;
 🏏 <span>IPL Toss & Match Pass</span><br>
 🏆 <span>WPL & BBL Analysis</span><br>
 🌍 <span>T20 World Cup Coverage</span><br>
-✅ <span>Safe • Calm • Professional</span>
+✅ <span>Safe • Professional • Trusted</span>
 </div>
 
 <div class="countdown">
 Auto join in <span id="sec">45</span> seconds
 </div>
 
-<div class="progress"><div class="bar" id="bar"></div></div>
-<div class="verify" id="verify">Verifying access… please wait</div>
+<div class="progress">
+  <div class="bar" id="bar"></div>
+</div>
+
+<div class="verify" id="verify">
+Verifying access… please wait
+</div>
 
 <a href="https://t.me/+9q95C8HPAb9kNjA1" class="join" onclick="manualJoin()">
 JOIN TELEGRAM
 </a>
 
 <div class="note">
-Cricket Stadium Background • Eye-Friendly Theme
+Cricket Stadium Background • Eye-Friendly • Premium
 </div>
 
 </div>
 
 <script>
-let total=45,s=total;
-const bar=document.getElementById("bar");
-const sec=document.getElementById("sec");
-const verify=document.getElementById("verify");
-let timer=setInterval(()=>{
-  s--; sec.innerText=s;
-  bar.style.width=((total-s)/total)*100+"%";
-  if(s===5) verify.style.display="block";
-  if(s===0){
+let total = 45, s = total;
+const bar = document.getElementById("bar");
+const sec = document.getElementById("sec");
+const verify = document.getElementById("verify");
+
+let timer = setInterval(()=>{
+  s--;
+  sec.innerText = s;
+  bar.style.width = ((total - s)/total)*100 + "%";
+
+  if(s === 5){
+    verify.style.display = "block";
+  }
+
+  if(s === 0){
     clearInterval(timer);
-    fbq('trackCustom','TelegramAutoJoinSoftGoldStadium');
-    window.location.href="https://t.me/+9q95C8HPAb9kNjA1";
+    fbq('trackCustom','TelegramAutoJoin45Final');
+    window.location.href = "https://t.me/+9q95C8HPAb9kNjA1";
   }
 },1000);
-function manualJoin(){ fbq('trackCustom','TelegramManualJoin'); }
+
+function manualJoin(){
+  fbq('trackCustom','TelegramManualJoin');
+}
 </script>
 
 </body>
