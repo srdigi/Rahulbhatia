@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Bhatia – Cricket Analyst</title>
+
+<!-- META PIXEL (SAFE – NO VALUE / NO CURRENCY) -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){
+n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)
+};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','000000000000000');
+fbq('track','PageView');
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
+body{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
+url('https://media.giphy.com/media/l0HlQ7LRal7h1f1Di/giphy.gif') center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;color:#fff;
+}
+.card{
+max-width:420px;width:100%;
+background:rgba(0,0,0,.93);
+border-radius:22px;padding:22px;text-align:center;
+box-shadow:0 0 45px rgba(0,255,255,.45);
+}
+.gif{width:100%;border-radius:16px;margin-bottom:14px}
+h1{color:#00e5ff;font-size:24px}
+.subs{color:#ffd700;font-size:14px;margin:6px 0}
+.tag{
+display:inline-block;background:linear-gradient(90deg,#ffd700,#ff9800);
+color:#000;padding:6px 18px;border-radius:40px;
+font-size:13px;font-weight:600;margin:14px 0
+}
+.list{text-align:left;font-size:14px;line-height:1.8;margin-bottom:14px}
+.list span{color:#00ffcc;font-weight:600}
+.countdown{font-size:18px;margin:10px 0;color:#00ff99;font-weight:700}
+.progress{
+width:100%;height:10px;background:#222;border-radius:10px;overflow:hidden;margin:12px 0
+}
+.bar{height:100%;width:0%;background:linear-gradient(90deg,#00ffcc,#00bcd4)}
+.verify{
+display:none;margin:10px 0;font-size:15px;
+color:#ffeb3b;font-weight:600
+}
+.join{
+display:block;width:100%;padding:15px;
+background:linear-gradient(90deg,#00ffcc,#00bcd4);
+color:#000;font-size:18px;font-weight:700;
+border-radius:50px;text-decoration:none;animation:pulse 1.2s infinite
+}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.07)}100%{transform:scale(1)}}
+.note{font-size:12px;opacity:.8;margin-top:10px}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<img class="gif" src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif">
+
+<h1>RAHUL BHATIA</h1>
+<div class="subs">🔥 20,013+ Subscribers • Since 2015</div>
+<div class="tag">Best Cricket Match Analyst</div>
+
+<div class="list">
+🏏 <span>IPL Toss & Match Pass</span><br>
+🏆 <span>WPL Accurate Signals</span><br>
+🔥 <span>BBL Session Specialist</span><br>
+🌍 <span>T20 World Cup Analysis</span><br>
+✅ <span>Safe • Trusted • Fast Updates</span>
+</div>
+
+<div class="countdown">
+Telegram auto join in <span id="sec">45</span> seconds
+</div>
+
+<div class="progress">
+  <div class="bar" id="bar"></div>
+</div>
+
+<div class="verify" id="verify">🔒 Verifying Access… Please wait</div>
+
+<a href="https://t.me/+9q95C8HPAb9kNjA1" class="join" onclick="manualJoin()">
+🚀 JOIN TELEGRAM NOW
+</a>
+
+<div class="note">
+Dubai Based • High Accuracy • Live Match Updates
+</div>
+</div>
+
+<!-- Beep Sound (last 5 sec) -->
+<audio id="beep">
+<source src="https://assets.mixkit.co/sfx/preview/mixkit-beep-tone-2866.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let total = 45;
+let s = total;
+const bar = document.getElementById("bar");
+const sec = document.getElementById("sec");
+const verify = document.getElementById("verify");
+const beep = document.getElementById("beep");
+
+let timer = setInterval(()=>{
+  s--;
+  sec.innerText = s;
+  bar.style.width = ((total - s)/total)*100 + "%";
+
+  if(s <= 5 && s > 0){
+    beep.play().catch(()=>{});
+  }
+
+  if(s === 5){
+    verify.style.display = "block";
+  }
+
+  if(s === 0){
+    clearInterval(timer);
+    fbq('trackCustom','TelegramAutoJoin45sPro');
+    window.location.href = "https://t.me/+9q95C8HPAb9kNjA1";
+  }
+},1000);
+
+function manualJoin(){
+  fbq('trackCustom','TelegramManualJoin');
+}
+</script>
+
+</body>
+</html>
